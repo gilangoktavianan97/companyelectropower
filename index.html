@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
+    <link rel="preload" href="img/favicon/favicon.ico" as="image" />
+    <title>ElectroPower - Solusi Kelistrikan Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-rotate {
+            animation: rotate 4s linear infinite;
+        }
+        
+        /* Floating label transition */
+        .peer:focus ~ label,
+        .peer:not(:placeholder-shown) ~ label {
+            transform: translateY(-1.5rem) scale(0.75);
+            color: #3b82f6;
+        }
+
+        @keyframes glitch {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 200%; }
+        }
+
+        .animate-glitch {
+            animation: glitch 2s linear infinite;
+        }
+
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .transform-style-preserve-3d {
+            transform-style: preserve-3d;
+        }
+
+        .parallax-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .parallax-layer {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        .animate-rotate {
+            animation: rotate 8s linear infinite;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes scroll-indicator {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(10px); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .animate-scroll-indicator {
+            animation: scroll-indicator 1.5s ease-in-out infinite alternate;
+        }
+
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .perspective-2000 {
+            perspective: 2000px;
+        }
+
+        .transform-style-preserve-3d {
+            transform-style: preserve-3d;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg);
+            transition: all 0.5s ease;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .animate-shine {
+            animation: shine 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        /* Untuk efek 3D pada hover */
+        .group:hover .service-card-inner {
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-br from-blue-900 to-purple-900 shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="img/lightning.png" alt="Logo" class="h-10">
+                    <span class="ml-2 text-xl font-bold text-slate-200">ElectroPower</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-slate-200 hover:text-cyan-500">Home</a>
+                    <a href="#services" class="text-slate-200 hover:text-cyan-500">Services</a>
+                    <a href="#projects" class="text-slate-200 hover:text-cyan-500">Projects</a>
+                    <a href="#contact" class="text-slate-200 hover:text-cyan-500">Contact</a>
+                </div>
+                
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+        <!-- Background Sci-fi Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-1 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
+        </div>
+    
+        <div class="max-w-7xl mx-auto px-4 pt-32 pb-24 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text Content -->
+                <div class="space-y-8 relative">
+                    <div class="absolute -top-8 -left-8 w-32 h-32 bg-blue-500/10 blur-2xl rounded-full"></div>
+                    
+                    <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight">
+                        <span class="inline-block mb-4">Revolusi</span><br>
+                        <span class="text-white">Kelistrikan Digital</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Transformasi sistem energi masa depan dengan solusi IoT dan AI berbasis cloud computing
+                    </p>
+    
+                    <div class="flex space-x-6 items-center">
+                        <a href="#contact">
+                            <button class="group relative bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-full font-semibold text-white hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300">
+                                <span class="relative z-10">Konsultasi Gratis</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- 3D Card Visualization -->
+                <div class="relative group perspective-2000">
+                    <div class="relative transform-style-preserve-3d group-hover:[transform:rotateY(-15deg)_rotateX(10deg)_translateZ(50px)] transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
+                        
+                        <div class="relative bg-gray-900/50 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
+                            <div class="relative group transform transition-all duration-500 hover:-translate-y-4">
+                                <!-- Gradient overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl z-20"></div>
+                                
+                                <!-- Main Image Container -->
+                                <div class="relative bg-gray-900/50 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl">                                    
+                                    <!-- Futuristic Image -->
+                                    <img src="img/futuristic-energy.webp" 
+                                         alt="Smart Energy System"
+                                         class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-500"
+                                         loading="lazy">
+                                    
+                                    <!-- Hover Effect Elements -->
+                                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    
+                                    <!-- Animated Glow -->
+                                    <div class="absolute -inset-24 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+                                        <div class="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,#4299e1_0%,#9333ea_50%,#4299e1_100%)] animate-rotate"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Floating Elements -->
+                                <div class="absolute -top-8 -right-8 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl animate-float"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
+            <div class="w-8 h-14 rounded-3xl border-2 border-blue-400/30 flex items-center justify-center">
+                <div class="w-1 h-3 bg-blue-400 rounded-full animate-scroll-indicator"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="min-h-screen py-16 bg-gradient-to-br from-blue-100 to-indigo-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-2xl font-bold text-center mb-8 mt-8 relative">
+                <span class="relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    OUR SERVICES
+                </span>
+                <div class="relative bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-1 mt-2 bg-gradient-to-r from-blue-400 to-purple-400"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 - Blue/Purple -->
+                <div class="group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-white/20 hover:border-blue-100/50">
+                    <div class="absolute inset-0 bg-[radial-gradient(200px_at_50%_150px,#e0f2fe80_0%,transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border border-blue-50">
+                            <i class="fas fa-bolt text-3xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"></i>
+                        </div>
+                    </div>
+    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Instalasi Listrik Cerdas</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Sistem instalasi terintegrasi dengan teknologi IoT untuk monitoring real-time</p>
+                </div>
+    
+                <!-- Card 2 - Green/Teal -->
+                <div class="group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-white/20 hover:border-green-100/50">
+                    <div class="absolute inset-0 bg-[radial-gradient(200px_at_50%_150px,#d1fae580_0%,transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-green-400 to-teal-500 rounded-xl transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border border-green-50">
+                            <i class="fas fa-solar-panel text-3xl bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent"></i>
+                        </div>
+                    </div>
+    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Energi Terbarukan</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Instalasi panel surya dan sistem energi hijau berkelanjutan</p>
+                </div>
+    
+                <!-- Card 3 - Orange/Amber -->
+                <div class="group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-white/20 hover:border-orange-100/50">
+                    <div class="absolute inset-0 bg-[radial-gradient(200px_at_50%_150px,#ffedd580_0%,transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-orange-400 to-amber-500 rounded-xl transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border border-orange-50">
+                            <i class="fas fa-home text-3xl bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent"></i>
+                        </div>
+                    </div>
+    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Home</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Otomatisasi rumah lengkap dengan sistem kontrol terpusat</p>
+                </div>
+    
+                <!-- Card 4 - Purple/Pink -->
+                <div class="group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-white/20 hover:border-purple-100/50">
+                    <div class="absolute inset-0 bg-[radial-gradient(200px_at_50%_150px,#f3e8ff80_0%,transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border border-purple-50">
+                            <i class="fas fa-chart-line text-3xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"></i>
+                        </div>
+                    </div>
+    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Audit Energi</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Analisis efisiensi energi dan optimasi biaya listrik</p>
+                </div>
+    
+                <!-- Card 5 - Teal/Cyan -->
+                <div class="group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-white/20 hover:border-teal-100/50">
+                    <div class="absolute inset-0 bg-[radial-gradient(200px_at_50%_150px,#ccfbf180_0%,transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-xl transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border border-teal-50">
+                            <i class="fas fa-tools text-3xl bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent"></i>
+                        </div>
+                    </div>
+    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Maintenance</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Perawatan berkala dan perbaikan sistem kelistrikan</p>
+                </div>
+    
+                <!-- Card 6 - Yellow/Amber -->
+                <div class="group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-white/20 hover:border-yellow-100/50">
+                    <div class="absolute inset-0 bg-[radial-gradient(200px_at_50%_150px,#fef3c780_0%,transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-xl transform rotate-45 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div class="relative w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border border-yellow-50">
+                            <i class="fas fa-lightbulb text-3xl bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent"></i>
+                        </div>
+                    </div>
+    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Desain Sistem</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Perencanaan dan desain instalasi listrik terintegrasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-8 mt-8">
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                    OUR PROJECTS
+                </h2>
+                <p class="uppercase font-extralight text-slate-900 max-w-2xl mx-auto">Eksplorasi solusi energi masa depan melalui karya nyata kami</p>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 - 3D Perspective -->
+                <div class="group relative h-96 overflow-hidden rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl"></div>
+                        <img src="img/project1.webp" alt="Smart Factory" 
+                        class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                        loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div class="text-center p-6 bg-black/50 backdrop-blur-sm rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">Smart Factory System</h3>
+                                <p class="text-sm text-cyan-200">IoT & Automation</p>
+                            </div>
+                        </div>
+                </div>
+    
+                <!-- Project 2 - Floating Card -->
+                <div class="group relative h-96 overflow-hidden rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl"></div>
+                        <img src="img/project1.webp" alt="Solar Farm" 
+                        class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                        loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div class="text-center p-6 bg-black/50 backdrop-blur-sm rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">Solar Power Plant</h3>
+                                <p class="text-sm text-cyan-200">10MW Pembangkit Listrik Tenaga Surya</p>
+                            </div>
+                        </div>
+                </div>
+    
+                <!-- Project 3 - Glitch Effect -->
+                <div class="group relative h-96 overflow-hidden rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl"></div>
+                        <img src="img/project1.webp" alt="Smart City" 
+                        class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                        loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div class="text-center p-6 bg-black/50 backdrop-blur-sm rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">Smart City</h3>
+                                <p class="text-sm text-cyan-200">Smart City</p>
+                            </div>
+                        </div>
+                </div>
+    
+                <!-- Project 4 - Parallax Layers -->
+                <div class="group relative h-96 overflow-hidden rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl"></div>
+                        <img src="img/project1.webp" alt="Industrial" 
+                        class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                        loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div class="text-center p-6 bg-black/50 backdrop-blur-sm rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">Industrial Automation</h3>
+                                <p class="text-sm text-cyan-200">Industrial Automation</p>
+                            </div>
+                        </div>
+                </div>
+    
+                <!-- Project 5 - Hover Reveal -->
+                <div class="group relative h-96 overflow-hidden rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl"></div>
+                    <img src="img/project1.webp" alt="Data Center" 
+                         class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                         loading="lazy">
+                    
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div class="text-center p-6 bg-black/50 backdrop-blur-sm rounded-xl">
+                            <h3 class="text-xl font-bold text-white mb-2">Data Center</h3>
+                            <p class="text-sm text-cyan-200">Tier IV Energy Solution</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project 6 - Interactive Grid -->
+                <div class="group relative h-96 overflow-hidden rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl"></div>
+                        <img src="img/project1.webp" alt="High Voltage" 
+                        class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                        loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div class="text-center p-6 bg-black/50 backdrop-blur-sm rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">HV System</h3>
+                                <p class="text-sm text-cyan-200">HV System</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator Section -->
+    <!-- <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Kalkulator Kebutuhan Listrik</h2>
+            
+            <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-xl">
+                <div class="space-y-6">
+                    <div class="calculator-item">
+                        <label class="block text-gray-700 mb-2">Nama Peralatan</label>
+                        <input type="text" class="w-full px-4 py-3 border rounded-lg">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Daya (Watt)</label>
+                            <input type="number" class="w-full px-4 py-3 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Jam Penggunaan/Hari</label>
+                            <input type="number" class="w-full px-4 py-3 border rounded-lg">
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">
+                        Tambah Peralatan
+                    </button>
+                    
+                    <div class="mt-8 p-6 bg-blue-100 rounded-lg">
+                        <h4 class="text-xl font-semibold mb-3">Total Kebutuhan Harian:</h4>
+                        <div class="text-3xl font-bold text-blue-900">0 Watt-Hour</div>
+                        <p class="text-gray-600 mt-2">* Perkiraan biaya bulanan: Rp 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-24 bg-gradient-to-br from-blue-100 to-indigo-100 overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute -top-20 -left-20 w-64 h-64 bg-purple-500 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+        </div>
+    
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="uppercase text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                    contact us
+                </h2>
+                <p class="uppercase font-extralight text-slate-900 max-w-2xl mx-auto">Kami siap membantu mewujudkan solusi energi terbaik untuk bisnis Anda</p>
+            </div>
+    
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Contact Information -->
+                <div class="space-y-8 relative">
+                    <div class="absolute -top-8 -left-8 w-48 h-48 bg-purple-500/10 blur-2xl rounded-full"></div>
+                    
+                    <!-- Contact Card 1 -->
+                    <div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Kantor Pusat</h3>
+                                <p class="text-gray-600">Jl. Energi Masa Depan No. 45<br>Jakarta Selatan 12520</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 border-2 border-white/20 rounded-2xl pointer-events-none"></div>
+                    </div>
+    
+                    <!-- Contact Card 2 -->
+                    <div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-2xl text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Hubungi Kami</h3>
+                                <p class="text-gray-600">+62 21 1234 5678<br>Senin - Jumat, 08:00 - 17:00</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 border-2 border-white/20 rounded-2xl pointer-events-none"></div>
+                    </div>
+    
+                    <!-- Interactive Map -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                        <div class="h-64 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-map-marked-alt text-3xl text-gray-400"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        <button class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-50">
+                            Buka di Maps
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Contact Form -->
+                <div class="relative bg-white backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <form>
+                    <div class="space-y-6">
+                        <!-- Floating Label Input -->
+                        <div class="relative z-0">
+                            <input type="text" id="name" 
+                                   class="block w-full px-4 py-3 bg-transparent border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-0 peer" 
+                                   placeholder=" " />
+                            <label for="name" 
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-5 scale-75 top-3 left-3 origin-[0] 
+                                          peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+                                          peer-focus:scale-75 peer-focus:-translate-y-8">
+                                Nama Lengkap
+                            </label>
+                        </div>
+
+                        <div class="relative z-0">
+                            <input type="tel" id="phone" 
+                                   class="block w-full px-4 py-3 bg-transparent border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-0 peer" 
+                                   placeholder=" "
+                                   pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" /> <!-- Opsional: format mask -->
+                            <label for="phone" 
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-5 scale-75 top-3 left-3 origin-[0] 
+                                          peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+                                          peer-focus:scale-75 peer-focus:-translate-y-8">
+                                Nomor Telepon
+                            </label>
+                        </div>
+    
+                        <!-- Floating Label Input Email -->
+                        <div class="relative z-0">
+                            <input type="email" id="email" 
+                                   class="block w-full px-4 py-3 bg-transparent border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-0 peer" 
+                                   placeholder=" " />
+                            <label for="email" 
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-5 scale-75 top-3 left-3 origin-[0] 
+                                          peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+                                          peer-focus:scale-75 peer-focus:-translate-y-8">
+                                Alamat Email
+                            </label>
+                        </div>
+    
+                        <!-- Floating Label Textarea -->
+                        <div class="relative z-0">
+                            <textarea id="message" rows="4" 
+                                      class="block w-full px-4 py-3 bg-transparent border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-0 peer" 
+                                      placeholder=" "></textarea>
+                            <label for="message" 
+                                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-5 scale-75 top-3 left-3 origin-[0] 
+                                          peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+                                          peer-focus:scale-75 peer-focus:-translate-y-8">
+                                Pesan Anda
+                            </label>
+                        </div>
+    
+                        <button class="w-full group relative bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-xl font-semibold text-white 
+                                      hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                            <span class="relative z-10">Kirim Pesan</span>
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="absolute -inset-24 opacity-0 group-hover:opacity-20 transition-opacity">
+                                <div class="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,#4299e1_0%,#9333ea_50%,#4299e1_100%)] animate-rotate"></div>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-blue-900 to-purple-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">ElectroPower</h5>
+                    <p class="text-sm text-gray-300">Solusi profesional untuk kebutuhan sistem kelistrikan Anda</p>
+                </div>
+                
+                <!-- Tambahkan bagian footer lainnya -->
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-sm text-gray-300">
+                <p>&copy; 2024 ElectroPower. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script>
+        // Kalkulator Logic
+        class Calculator {
+            constructor() {
+                this.appliances = [];
+            }
+            
+            addAppliance(name, wattage, hours) {
+                this.appliances.push({ name, wattage, hours });
+                this.updateDisplay();
+            }
+            
+            calculateTotal() {
+                return this.appliances.reduce((total, appliance) => {
+                    return total + (appliance.wattage * appliance.hours);
+                }, 0);
+            }
+            
+            updateDisplay() {
+                const total = this.calculateTotal();
+                document.querySelector('.total-consumption').textContent = 
+                    `${total.toLocaleString()} Watt-Hour`;
+            }
+        }
+    
+        const calculator = new Calculator();
+        
+        // Event Listeners
+        document.querySelector('.add-appliance').addEventListener('click', () => {
+            // Implementasi logika tambah peralatan
+        });
+    </script> -->
+</body>
+</html>
